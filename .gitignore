@@ -1,0 +1,13 @@
+# Development Environment
+.vscode/
+**/.DS_Store
+
+# Python Files
+.venv/
+**/*.pyc
+**/__pycache__/
+*.egg*
+
+# Testing Files
+**/.coverage
+**.err
