@@ -4,16 +4,22 @@ on:
     branches:
       - main
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install virtualenv
+      run: pip install virtualenv
+    - name: Run test pipeline
+      run: bash test.sh
+
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: '0'
-    - name: Install virtualenv
-      run: pip install virtualenv
-    - name: Run test pipeline
-      run: bash test.sh
     - name: Bump version and push tag
       id: versioning
       uses: anothrNick/github-tag-action@1.35.0
@@ -26,7 +32,7 @@ jobs:
         python-version: '3.x'
     - name: Build package
       run: |
-        echo "${{ steps.versioning.new_tag }}" | cut -c2- > version
+        echo "${{ steps.versioning.outputs.new_tag }}" | cut -c2- > version
         python setup.py sdist
     - name: Install twine
       run: pip install twine
