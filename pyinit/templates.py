@@ -78,4 +78,10 @@ fi
 exit $error
 """
 
-TEMPLATES = {".gitignore": _GIT_IGNORE, "setup.py": _SETUP_PY, "setup.cfg": _SETUP_CFG, "test.sh": _TEST_SH}
+_MANIFEST_IN = "include version"
+
+TEMPLATES = {".gitignore": _GIT_IGNORE,
+             "setup.py": _SETUP_PY,
+             "setup.cfg": _SETUP_CFG,
+             "test.sh": _TEST_SH,
+             "MANIFEST.in": _MANIFEST_IN}
