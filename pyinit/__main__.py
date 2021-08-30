@@ -23,12 +23,12 @@ def main():
     }
 
     if (os.path.exists('setup.cfg') or os.path.exists('setup.py') or os.path.exists(package_information["package_name"])
-            or os.path.exists('tests/unit')) and args.force is False:
+            or os.path.exists('tests/unit') or os.path.exists('MANIFEST.in')) and args.force is False:
         logger.error('PyInit will overwrite current files. Use `-f` to run anyways.')
         sys.exit(1)
 
     # Add files to package
-    for file_ in ["setup.py", "setup.cfg", "test.sh", ".gitignore"]:
+    for file_ in ["setup.py", "setup.cfg", "test.sh", ".gitignore", "MANIFEST.in"]:
         add_file(file_, package_information)
 
     # Intialize package and add __init__.py file
