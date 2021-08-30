@@ -11,7 +11,7 @@ pip install -e .[develop]
 python setup.py nosetests || error=1
 
 if [[ $error -ne 1 ]]; then
-    flake8 pyinit  || true
+    flake8 pyinit2  || true
 fi
 
 exit $error
