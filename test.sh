@@ -2,7 +2,7 @@
 set -ex
 
 if [[ -z $VIRTUAL_ENV ]]; then
-    virtualenv -p $(which python3) venv
+    python3 -m venv venv
     source venv/bin/activate
 fi
 
