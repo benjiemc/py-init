@@ -8,8 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Install virtualenv
-      run: pip install virtualenv
     - name: Run test pipeline
       run: bash test.sh
 
