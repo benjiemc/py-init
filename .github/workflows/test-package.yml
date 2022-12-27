@@ -15,7 +15,5 @@ jobs:
           python-version: '3.x'
       - name: Display Python version
         run: python --version
-      - name: Install virtualenv
-        run: pip install virtualenv
       - name: Run test pipeline
         run: bash test.sh

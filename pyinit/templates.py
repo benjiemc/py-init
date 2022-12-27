@@ -59,6 +59,11 @@ if __name__ == "__main__":
     setup()
 """
 
+_PYPROJECT_TOML = """[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+"""
+
 _TEST_SH = """#!/usr/bin/env bash
 set -ex
 
@@ -83,5 +88,6 @@ _MANIFEST_IN = "include version"
 TEMPLATES = {".gitignore": _GIT_IGNORE,
              "setup.py": _SETUP_PY,
              "setup.cfg": _SETUP_CFG,
+             "pyproject.toml": _PYPROJECT_TOML,
              "test.sh": _TEST_SH,
              "MANIFEST.in": _MANIFEST_IN}

@@ -28,7 +28,7 @@ def main():
         sys.exit(1)
 
     # Add files to package
-    for file_ in ["setup.py", "setup.cfg", "test.sh", ".gitignore", "MANIFEST.in"]:
+    for file_ in ["setup.py", "setup.cfg",  "pyproject.toml", "test.sh", ".gitignore", "MANIFEST.in"]:
         add_file(file_, package_information)
 
     # Intialize package and add __init__.py file
